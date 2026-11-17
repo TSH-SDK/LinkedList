@@ -47,3 +47,15 @@ Node* min_price(Node* current) {
     return min_node;
 }
 
+void clear_list(LinkedList* list) {
+    Node* current = list->head;
+
+    while (current != nullptr) {
+        Node* temp = current;
+        current = current->next;
+        delete temp;
+    }
+
+    list->head = nullptr;
+}
+

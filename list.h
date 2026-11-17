@@ -21,4 +21,6 @@ void echo_list(LinkedList* list);
 
 Node* min_price(Node* current);
 
+void clear_list(LinkedList* list);
+
 #endif
