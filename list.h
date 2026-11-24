@@ -23,4 +23,6 @@ Node* min_price(Node* current);
 
 void clear_list(LinkedList* list);
 
+void selection_sort(LinkedList* list);
+
 #endif

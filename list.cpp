@@ -34,28 +34,36 @@ Node* min_price(Node* current) {
     Node* cur = current;
     int min_price = 10000000;
     Node* min_node = nullptr;
-
     while (cur != nullptr) {
         if (cur->data.price < min_price) {
             min_price = cur->data.price;
             min_node = cur;
         }
-
         cur = cur->next;
     }
-
     return min_node;
 }
 
 void clear_list(LinkedList* list) {
     Node* current = list->head;
-
     while (current != nullptr) {
         Node* temp = current;
         current = current->next;
         delete temp;
     }
-
     list->head = nullptr;
+}
+
+void selection_sort(LinkedList* list) {
+    Node* cur = list->head;
+    while (cur != nullptr) {
+        Node* min = min_price(cur->next);
+        if (min!= nullptr && min->data.price < cur->data.price) {
+            Product t = cur->data;
+            cur->data = min->data;
+            min->data = t;
+        }
+        cur = cur->next;
+    }
 }
 
